@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+
+    <link rel="stylesheet" href="css/basic.css">
+    <link href='fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/interaction/main.js'></script>
+    <script src='fullcalendar/daygrid/main.js'></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid', 'timeGrid'],
+                selectable: true,
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                dateClick: function(info) {
+                    alert('clicked ' + info.dateStr);
+                    $("#calendar-date").val(info.dateStr);
+                },
+                select: function(info) {
+                    alert('selected ' + info.startStr + ' to ' + info.endStr);
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <div id="calendar" style="width: 50%; height: 50%; float: left"></div>
+    <div id="calendar-date" style="font-size: 50px; float: left">1234567890</div>
+
+</body>
+
+</html>
