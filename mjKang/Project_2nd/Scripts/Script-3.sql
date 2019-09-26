@@ -1,0 +1,1 @@
+insert into reservationlist values(null,'moon','1111-1111','2019-09-13','moon','카페','서울',0);
