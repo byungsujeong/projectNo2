@@ -2,7 +2,7 @@ use project2;
 
 CREATE TABLE calendarlist(
 	schedulenum int(11) auto_increment primary key,
-	id varchar(50),
+	mid varchar(50),
 	checkdate date,
 	content varchar(100)
 );
